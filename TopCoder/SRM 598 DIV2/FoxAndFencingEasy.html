@@ -1,0 +1,27 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Fox Ciel is playing a board game with her friend Squirrel Liss.
+The game is played on an infinite strip of paper.
+The strip of paper is divided into consecutive cells.
+Each cell has an integer coordinate.
+Formally, for each integer i, the left neighbor of cell i is cell (i-1) and the right neighbor of cell i is cell (i+1).
+<br></br>
+<br></br>
+<br></br>
+Each of the players has a single token called the fencer.
+At the beginning of the game, Ciel's fencer is in cell 0 and Liss's fencer is in cell <b>d</b>.
+Each of the fencers has a limit: its maximum move length.
+For Ciel's fencer the maximum move length is <b>mov1</b> and for Liss's fencer it is <b>mov2</b>.
+<br></br>
+<br></br>
+<br></br>
+The players take alternating turns.
+Ciel goes first.
+In each turn the current player moves her fencer.
+The distance between the original cell and the destination cell must be at most equal to the fencer's maximum move length.
+(It is also allowed to leave the fencer in the same cell.)
+If the current player moves her fencer into the cell with the other fencer, the current player's fencer scores a hit and wins the game.
+<br></br>
+<br></br>
+<br></br>
+You are given the ints <b>mov1</b>, <b>mov2</b>, and <b>d</b>.
+Return "Ciel" (quotes for clarity) if Fox Ciel has a winning strategy, "Liss" if Squirrel Liss has a winning strategy, and "Draw" otherwise.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>FoxAndFencingEasy</td></tr><tr><td>Method:</td><td>WhoCanWin</td></tr><tr><td>Parameters:</td><td>int, int, int</td></tr><tr><td>Returns:</td><td>string</td></tr><tr><td>Method signature:</td><td>string WhoCanWin(int mov1, int mov2, int d)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>mov1</b> will be between 1 and 100,000,000, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>mov2</b> will be between 1 and 100,000,000, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>d</b> will be between 1 and 100,000,000, inclusive.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>1</pre></td></tr><tr><td><pre>58</pre></td></tr><tr><td><pre>1</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Ciel&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Ciel can win in her first turn by moving her fencer one cell to the right.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>100</pre></td></tr><tr><td><pre>100</pre></td></tr><tr><td><pre>100000000</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Draw&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Liss can avoid getting hit forever by repeating Ciel's moves. For example, whenever Ciel moves her fencer 47 cells to the right, Liss also moves her fencer 47 cells to the right. Ciel has a similar strategy: in her first turn she can move her fencer arbitrarily and in each of the following turns she will repeat Liss's previous move. Therefore the game ends in a draw.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>100</pre></td></tr><tr><td><pre>150</pre></td></tr><tr><td><pre>100000000</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Draw&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>100</pre></td></tr><tr><td><pre>250</pre></td></tr><tr><td><pre>100000000</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Liss&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

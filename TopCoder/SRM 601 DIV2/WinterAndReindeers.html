@@ -1,0 +1,32 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>
+It's winter time! Time to play some games.
+</p>
+<p>
+</p>
+<p>
+Four reindeers are playing the following game.
+The first three of them choose three non-empty strings: A, B, and C. (The strings are not necessarily distinct.)
+Then, the fourth one (and it happens to be the youngest one) finds a string S that satisfies the following conditions:
+</p>
+<ul>
+<li>
+S is a subsequence of A. (I.e., either S equals A, or S can be obtained from A by removing some of its characters.)
+</li>
+<li>
+S is a subsequence of B.
+</li>
+<li>
+C is a (contiguous) substring of S.
+</li>
+<li>
+There is no string longer than S that satisfies the previous three conditions.
+</li>
+</ul>
+<p>
+</p>
+<p>
+You are given three vector &lt;string&gt;s <b>allA</b>, <b>allB</b> and <b>allC</b>.
+Concatenate all elements of <b>allA</b>, <b>allB</b> and <b>allC</b> to obtain strings A, B and C, respectively.
+Return the length of the string S.
+If there is no such string, return 0.
+</p></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>WinterAndReindeers</td></tr><tr><td>Method:</td><td>getNumber</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;, vector &lt;string&gt;, vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int getNumber(vector &lt;string&gt; allA, vector &lt;string&gt; allB, vector &lt;string&gt; allC)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td colspan="2"><h3>Limits</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Time limit (s):</td><td>2.000</td></tr><tr><td>Memory limit (MB):</td><td>256</td></tr></table></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>allA</b>, <b>allB</b> and <b>allC</b> will each contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>allA</b>, <b>allB</b> and <b>allC</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>allA</b>, <b>allB</b> and <b>allC</b> will consist only of uppercase English letters ('A'-'Z').</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;X&quot;}</pre></td></tr><tr><td><pre>{&quot;X&quot;, &quot;Y&quot;}</pre></td></tr><tr><td><pre>{&quot;X&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 1</pre></td></tr><tr><td><table><tr><td colspan="2">In this case, A = "X", B = "XY", C = "X". The longest possible string that satisfies conditions from the statement is "X". Thus, the answer is 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ABCXD&quot;}</pre></td></tr><tr><td><pre>{&quot;BCDEF&quot;}</pre></td></tr><tr><td><pre>{&quot;CD&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">The longest possible string in this case is "BCD".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;WE&quot;, &quot;LOVE&quot;}</pre></td></tr><tr><td><pre>{&quot;WORKING&quot;, &quot;FOR&quot;, &quot;SANTA&quot;}</pre></td></tr><tr><td><pre>{&quot;JK&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2">No string satisfies all criteria in this case. Thus, the answer is 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ABCDE&quot;}</pre></td></tr><tr><td><pre>{&quot;CDEAB&quot;}</pre></td></tr><tr><td><pre>{&quot;B&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 2</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ABCABDEGAXAHDJBAAHFJDXBB&quot;, &quot;ABHFHCDALFDJDBBA&quot;, &quot;BABBAXAXXX&quot;}</pre></td></tr><tr><td><pre>{&quot;ABLOCBAXBAHAJDXBIJKA&quot;, &quot;JBABCDAHKFIUDALPJAH&quot;, &quot;AABACX&quot;}</pre></td></tr><tr><td><pre>{&quot;AXBADXBBAB&quot;, &quot;CDD&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 23</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>
